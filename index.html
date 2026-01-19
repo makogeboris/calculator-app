@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Solve basic and complex math instantly with our fast, free, and mobile-friendly online calculator. Accurate results for school, work, or home."
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Calculator" />
+    <link rel="manifest" href="assets/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator App</title>
+  </head>
+  <body>
+    <main>
+      <div class="main-container">
+        <header class="header">
+          <h1 class="title">calc</h1>
+
+          <div class="theme-container">
+            <div class="theme-number-container">
+              <span class="theme-number">1</span>
+              <span class="theme-number">2</span>
+              <span class="theme-number">3</span>
+            </div>
+
+            <div class="theme-wrapper">
+              <p class="theme-text">Theme</p>
+
+              <div class="switch">
+                <input id="theme" type="checkbox" class="switch-input" />
+                <label for="theme" class="switch-label"></label>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <output class="result" name="results" aria-label="Current result"
+          >399,981</output
+        >
+
+        <div
+          class="keypad-container"
+          role="group"
+          aria-label="Calculator keypad"
+        >
+          <button type="button" class="key" data-value="7">7</button
+          ><button type="button" class="key" data-value="8">8</button
+          ><button type="button" class="key" data-value="9">9</button
+          ><button
+            type="button"
+            class="key delete"
+            aria-label="Delete last character"
+            data-action="delete"
+          >
+            Del</button
+          ><button type="button" class="key" data-value="4">4</button
+          ><button type="button" class="key" data-value="5">5</button
+          ><button type="button" class="key" data-value="6">6</button
+          ><button type="button" class="key" aria-label="Add" data-value="+">
+            +</button
+          ><button type="button" class="key" data-value="1">1</button
+          ><button type="button" class="key" data-value="2">2</button
+          ><button type="button" class="key" data-value="3">3</button
+          ><button
+            type="button"
+            class="key"
+            aria-label="Subtract"
+            data-value="-"
+          >
+            -</button
+          ><button
+            type="button"
+            class="key"
+            aria-label="Decimal point"
+            data-value="."
+          >
+            .</button
+          ><button type="button" class="key" data-value="0">0</button
+          ><button type="button" class="key" aria-label="Divide" data-value="/">
+            /</button
+          ><button
+            type="button"
+            class="key"
+            aria-label="Multiply"
+            data-value="*"
+          >
+            x</button
+          ><button
+            type="button"
+            class="key reset"
+            aria-label="Reset all"
+            data-action="reset"
+          >
+            Reset</button
+          ><button
+            type="button"
+            class="key equals"
+            aria-label="Calculate result"
+            data-action="calculate"
+          >
+            =
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
