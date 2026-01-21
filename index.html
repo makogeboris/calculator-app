@@ -34,29 +34,38 @@
   <body>
     <main>
       <div class="main-container">
-        <header class="header">
+        <header>
           <h1 class="title">calc</h1>
 
           <div class="theme-container">
-            <div class="theme-number-container">
+            <div class="theme-number-container" aria-hidden="true">
               <span class="theme-number">1</span>
               <span class="theme-number">2</span>
               <span class="theme-number">3</span>
             </div>
 
             <div class="theme-wrapper">
-              <p class="theme-text">Theme</p>
+              <p id="theme-label" class="theme-text">Theme</p>
 
-              <div class="switch">
-                <input id="theme" type="checkbox" class="switch-input" />
-                <label for="theme" class="switch-label"></label>
-              </div>
+              <button
+                id="theme-toggle"
+                class="switch"
+                data-position="1"
+                aria-labelledby="theme-label"
+                aria-live="polite"
+              >
+                <div class="switch-thumb"></div>
+              </button>
             </div>
           </div>
         </header>
 
-        <output class="result" name="results" aria-label="Current result"
-          >399,981</output
+        <output
+          class="result"
+          name="results"
+          aria-label="Current result"
+          aria-live="polite"
+          >0</output
         >
 
         <div
@@ -64,47 +73,37 @@
           role="group"
           aria-label="Calculator keypad"
         >
-          <button type="button" class="key" data-value="7">7</button
-          ><button type="button" class="key" data-value="8">8</button
-          ><button type="button" class="key" data-value="9">9</button
+          <button type="button" class="key" value="7">7</button
+          ><button type="button" class="key" value="8">8</button
+          ><button type="button" class="key" value="9">9</button
           ><button
             type="button"
             class="key delete"
-            aria-label="Delete last character"
+            aria-label="Delete last digit"
             data-action="delete"
           >
             Del</button
-          ><button type="button" class="key" data-value="4">4</button
-          ><button type="button" class="key" data-value="5">5</button
-          ><button type="button" class="key" data-value="6">6</button
-          ><button type="button" class="key" aria-label="Add" data-value="+">
+          ><button type="button" class="key" value="4">4</button
+          ><button type="button" class="key" value="5">5</button
+          ><button type="button" class="key" value="6">6</button
+          ><button type="button" class="key" aria-label="Plus" value="+">
             +</button
-          ><button type="button" class="key" data-value="1">1</button
-          ><button type="button" class="key" data-value="2">2</button
-          ><button type="button" class="key" data-value="3">3</button
-          ><button
-            type="button"
-            class="key"
-            aria-label="Subtract"
-            data-value="-"
-          >
+          ><button type="button" class="key" value="1">1</button
+          ><button type="button" class="key" value="2">2</button
+          ><button type="button" class="key" value="3">3</button
+          ><button type="button" class="key" aria-label="Subtract" value="-">
             -</button
           ><button
             type="button"
             class="key"
             aria-label="Decimal point"
-            data-value="."
+            value="."
           >
             .</button
-          ><button type="button" class="key" data-value="0">0</button
-          ><button type="button" class="key" aria-label="Divide" data-value="/">
+          ><button type="button" class="key" value="0">0</button
+          ><button type="button" class="key" aria-label="Divide" value="/">
             /</button
-          ><button
-            type="button"
-            class="key"
-            aria-label="Multiply"
-            data-value="*"
-          >
+          ><button type="button" class="key" aria-label="Multiply" value="*">
             x</button
           ><button
             type="button"
@@ -116,7 +115,7 @@
           ><button
             type="button"
             class="key equals"
-            aria-label="Calculate result"
+            aria-label="Equals"
             data-action="calculate"
           >
             =
