@@ -192,9 +192,6 @@ button {
 body {
   font-family: "League Spartan", sans-serif;
   background-color: var(--bg-main);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 main {
@@ -408,6 +405,12 @@ header {
 }
 
 @media (min-width: 37.5rem) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .result {
     padding-block: 2.5rem 2rem;
     font-size: 3.5rem;
