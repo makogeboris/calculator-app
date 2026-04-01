@@ -1,0 +1,451 @@
+:root {
+  /* Theme 1 */
+  --bg-main: hsl(222, 26%, 31%);
+  --bg-toggle-pad: hsl(223, 31%, 20%);
+  --bg-screen: hsl(224, 36%, 15%);
+  --key-primary-bg: hsl(225, 21%, 49%);
+  --key-primary-shadow: hsl(224, 28%, 35%);
+  --key-equals-bg: hsl(6, 63%, 50%);
+  --key-equals-shadow: hsl(6, 70%, 34%);
+  --key-num-bg: hsl(0, 0%, 90%);
+  --key-num-shadow: hsl(28, 16%, 65%);
+  --text-main: hsl(0, 100%, 100%);
+  --text-num: hsl(221, 14%, 31%);
+  --text-equals: hsl(0, 100%, 100%);
+  --text-del-res: hsl(0, 100%, 100%);
+  --key-num-hover: hsl(0, 100%, 100%);
+  --key-primary-hover: hsl(225, 51%, 76%);
+  --key-equals-hover: hsl(6, 93%, 67%);
+}
+
+/* Theme 2 */
+[data-theme="2"] {
+  --bg-main: hsl(0, 0%, 90%);
+  --bg-toggle-pad: hsl(0, 5%, 81%);
+  --bg-screen: hsl(0, 0%, 93%);
+  --key-primary-bg: hsl(185, 42%, 37%);
+  --key-primary-shadow: hsl(185, 58%, 25%);
+  --key-equals-bg: hsl(25, 98%, 40%);
+  --key-equals-shadow: hsl(25, 99%, 27%);
+  --key-num-bg: hsl(0, 0%, 90%);
+  --key-num-shadow: hsl(35, 11%, 61%);
+  --text-main: hsl(60, 10%, 19%);
+  --text-num: hsl(60, 10%, 19%);
+  --text-equals: hsl(0, 100%, 100%);
+  --text-del-res: hsl(0, 100%, 100%);
+  --key-num-hover: hsl(0, 100%, 100%);
+  --key-primary-hover: hsl(185, 40%, 56%);
+  --key-equals-hover: hsl(25, 100%, 61%);
+}
+
+/* Theme 3 */
+[data-theme="3"] {
+  --bg-main: hsl(268, 75%, 9%);
+  --bg-toggle-pad: hsl(268, 71%, 12%);
+  --bg-screen: hsl(268, 71%, 12%);
+  --key-primary-bg: hsl(281, 89%, 26%);
+  --key-primary-shadow: hsl(285, 91%, 52%);
+  --key-equals-bg: hsl(176, 100%, 44%);
+  --key-equals-shadow: hsl(177, 92%, 70%);
+  --key-num-bg: hsl(268, 47%, 21%);
+  --key-num-shadow: hsl(290, 70%, 36%);
+  --text-main: hsl(52, 100%, 62%);
+  --text-num: hsl(52, 100%, 62%);
+  --text-equals: hsl(198, 20%, 13%);
+  --text-del-res: hsl(0, 100%, 100%);
+  --key-num-hover: hsl(268, 54%, 44%);
+  --key-primary-hover: hsl(280, 56%, 44%);
+  --key-equals-hover: hsl(176, 100%, 79%);
+}
+
+/* RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  box-sizing: border-box;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100dvh;
+  line-height: 1.5;
+  font-family: "League Spartan", sans-serif;
+  background-color: var(--bg-main);
+}
+
+/* Remove default margins */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+* {
+  margin: 0;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  overflow-wrap: break-word;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Smooth scroll */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+main {
+  width: 100%;
+}
+
+.main-container {
+  max-width: 35.75rem;
+  margin: 0 auto;
+  padding-block: 2rem;
+  padding-inline: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: -0.0313em;
+  color: var(--text-main);
+}
+
+.theme-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.375rem;
+}
+
+.theme-number-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-right: 14px;
+}
+
+.theme-number {
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1;
+  text-align: center;
+  color: var(--text-main);
+}
+
+.theme-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-text {
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.0625em;
+  color: var(--text-main);
+  padding-top: 4px;
+}
+
+.switch {
+  position: relative;
+  width: 68px;
+  height: 26px;
+  background-color: var(--bg-toggle-pad);
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.25s ease;
+}
+
+.switch:focus-visible {
+  outline: 2px solid var(--key-equals-bg);
+  outline-offset: 3px;
+}
+
+.switch-thumb {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--key-equals-bg);
+  transition:
+    left 0.25s ease,
+    background-color 0.25s ease;
+  pointer-events: none;
+}
+
+[data-position="2"] .switch-thumb {
+  left: 26px;
+}
+
+[data-position="3"] .switch-thumb {
+  left: 47px;
+}
+
+.result {
+  display: block;
+  padding: 2rem;
+  background: var(--bg-screen);
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+.result-text {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
+  text-align: right;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1;
+  color: var(--text-main);
+  padding-right: 0.5rem;
+  box-sizing: border-box;
+}
+
+.result-text::-webkit-scrollbar {
+  display: none;
+}
+
+.keypad-container {
+  padding: 1rem;
+  background: var(--bg-toggle-pad);
+  border-radius: 10px;
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.key:nth-last-child(-n + 2) {
+  grid-column: span 2;
+}
+
+.key {
+  padding-block: 0.25em;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: -0.0313em;
+  line-height: 1;
+  text-align: center;
+  color: var(--text-num);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: transparent;
+  background-color: var(--key-num-bg);
+  box-shadow: inset 0px -4px 0px var(--key-num-shadow);
+  border-radius: 5px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.key:active {
+  translate: 0 2px;
+  box-shadow: inset 0px -2px 0px var(--key-num-shadow);
+}
+
+.key:hover {
+  background-color: var(--key-num-hover);
+}
+
+.key:focus-visible {
+  outline: 3px solid var(--key-equals-bg);
+  outline-offset: 2px;
+}
+
+.delete,
+.reset {
+  font-size: 1.25rem;
+  letter-spacing: -0.0187em;
+  text-transform: uppercase;
+  color: var(--text-del-res);
+  background-color: var(--key-primary-bg);
+  box-shadow: inset 0px -4px 0px var(--key-primary-shadow);
+  border-radius: 5px;
+  padding-block: 0.69em;
+}
+
+.delete:active,
+.reset:active {
+  translate: 0 2px;
+  box-shadow: inset 0px -2px 0px var(--key-primary-shadow);
+}
+
+.delete:hover,
+.reset:hover {
+  background-color: var(--key-primary-hover);
+}
+
+.equals {
+  background-color: var(--key-equals-bg);
+  box-shadow: inset 0px -4px 0px var(--key-equals-shadow);
+  font-size: 1.25rem;
+  letter-spacing: -0.0187em;
+  color: var(--text-equals);
+  padding-block: 0.69em;
+}
+
+.equals:active {
+  translate: 0 2px;
+  box-shadow: inset 0px -2px 0px var(--key-equals-shadow);
+}
+
+.equals:hover {
+  background-color: var(--key-equals-hover);
+}
+
+@media (min-width: 37.5rem) {
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .result {
+    padding-block: 2.5rem 2rem;
+  }
+
+  .result-text {
+    font-size: 3.5rem;
+  }
+
+  .keypad-container {
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .key {
+    font-size: 2.5rem;
+    letter-spacing: -0.0437em;
+    border-radius: 10px;
+    padding-block: 0.3em;
+  }
+
+  .reset,
+  .delete,
+  .equals {
+    font-size: 1.75rem;
+    letter-spacing: -0.0313em;
+  }
+
+  .reset,
+  .equals {
+    padding-block: 0.64em;
+  }
+}
